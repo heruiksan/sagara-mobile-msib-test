@@ -4,7 +4,7 @@ class Weather {
   final int humidity;
   final double windSpeed;
   final String countryCode;
-  final List<WeatherForecast> forecast; // Tambahkan properti ini
+  final List<WeatherForecast> forecast;
 
   Weather({
     required this.description,
