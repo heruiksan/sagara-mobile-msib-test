@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart'; // Import the intl package
+import 'package:intl/intl.dart'; 
 import 'services/weather_service.dart';
 import 'models/weather_model.dart';
 
@@ -46,7 +46,6 @@ class _TrackingResultScreenState extends State<TrackingResultScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Format current date and time
     final DateFormat formatter = DateFormat('HH:mm - dd MMMM yyyy');
     final String formattedDate = formatter.format(DateTime.now());
 
@@ -62,7 +61,6 @@ class _TrackingResultScreenState extends State<TrackingResultScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Timestamp and current weather
                         Container(
                           padding: EdgeInsets.all(10),
                           color: Colors.blueAccent.withOpacity(0.2),
@@ -147,7 +145,6 @@ class _TrackingResultScreenState extends State<TrackingResultScreen> {
                                 ],
                               ),
                               SizedBox(height: 20),
-                              // Separator line
                               Divider(
                                 color: Colors.black,
                                 height: 1,
@@ -168,7 +165,6 @@ class _TrackingResultScreenState extends State<TrackingResultScreen> {
                                   ),
                                 ],
                               ),
-                        // Forecast for next days
                         ..._weather!.forecast.map((forecast) {
                           return Padding(
                             padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
