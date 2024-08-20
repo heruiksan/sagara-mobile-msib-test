@@ -1,3 +1,12 @@
+# Cara penggunaan:
+1.	Masukan data kota yang ingin di cek cuacanya dengan menekan tombol add di sebelah kanan bawah
+2.	User dapat menghapus dan mengedit data kota yang di masukan
+3.	Setelah data kota di masukan, ketuk kota tersebut lalu akan menampilkan data ramalan cuaca
+
+Link Repository:
+https://github.com/heruiksan/sagara-mobile-msib-test.git 
+
+
 # sagara-mobile-msib-test
 
 Tujuan:
