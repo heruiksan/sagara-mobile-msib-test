@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.blue, // Warna AppBar
+          backgroundColor: Colors.blue, 
         ),
       ),
       home: WeatherScreen(),
@@ -30,7 +30,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   final WeatherService _weatherService = WeatherService();
   Weather? _weather;
   bool _isLoading = false;
-  List<Map<String, String>> _cities = []; // List of cities with countryCode
+  List<Map<String, String>> _cities = []; 
 
   Future<void> _fetchWeather(String city) async {
     setState(() {
@@ -40,7 +40,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
     try {
       final weather = await _weatherService.getCurrentWeather(city);
       setState(() {
-        _cities.add({'city': city, 'countryCode': weather.countryCode}); // Add city and countryCode to the list
+        _cities.add({'city': city, 'countryCode': weather.countryCode}); 
         _isLoading = false;
       });
     } catch (e) {
@@ -74,9 +74,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   try {
                     final weather = await _weatherService.getCurrentWeather(city);
                     setState(() {
-                      _cities.add({'city': city, 'countryCode': weather.countryCode}); // Add city to the list
+                      _cities.add({'city': city, 'countryCode': weather.countryCode}); 
                     });
-                    Navigator.of(context).pop(); // Close the dialog
+                    Navigator.of(context).pop(); 
                   } catch (e) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: Text('City not found or invalid')),
@@ -117,9 +117,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   try {
                     final weather = await _weatherService.getCurrentWeather(city);
                     setState(() {
-                      _cities[index] = {'city': city, 'countryCode': weather.countryCode}; // Update city and countryCode in the list
+                      _cities[index] = {'city': city, 'countryCode': weather.countryCode}; 
                     });
-                    Navigator.of(context).pop(); // Close the dialog
+                    Navigator.of(context).pop(); 
                   } catch (e) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: Text('City not found or invalid')),
@@ -140,7 +140,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   void _deleteCity(int index) {
     setState(() {
-      _cities.removeAt(index); // Remove city from the list
+      _cities.removeAt(index); 
     });
   }
 
@@ -180,20 +180,20 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             IconButton(
                               icon: Icon(Icons.edit),
                               onPressed: () {
-                                _showEditCityDialog(index); // Edit city
+                                _showEditCityDialog(index); 
                               },
                             ),
                             IconButton(
                               icon: Icon(Icons.delete),
                               onPressed: () {
-                                _deleteCity(index); // Delete city
+                                _deleteCity(index);
                               },
                             ),
                           ],
                         ),
                       );
                     },
-                    separatorBuilder: (context, index) => Divider(), // Add separator
+                    separatorBuilder: (context, index) => Divider(), 
                   ),
       ),
       floatingActionButton: FloatingActionButton(
